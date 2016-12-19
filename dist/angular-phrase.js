@@ -72,7 +72,7 @@
   phrase = angular.module("phrase");
 
   phrase.directive("phraseJavascript", [
-    "phraseEnabled", "phraseProjectId", "$window", function(phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) {
+    "phraseEnabled", "phraseProjectId", "phraseAutoLowercase", "$window", function(phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) {
       return {
         restrict: "EA",
         replace: true,
