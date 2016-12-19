@@ -1,3 +1,9 @@
+# this fork
+
+This was mainly created to provide the possibility to configure the value of the 'autoLowercase' parameter.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # angular-phrase
 
 [![Build Status](https://travis-ci.org/phrase/angular-phrase.png)](https://travis-ci.org/phrase/angular-phrase)
