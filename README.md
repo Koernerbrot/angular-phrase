@@ -1,6 +1,13 @@
 # this fork
 
-This was mainly created to provide the possibility to configure the value of the 'autoLowercase' parameter.
+This fork was mainly created to provide the possibility to configure the value of the 'autoLowercase' parameter.
+
+    myApp.value("phraseAutoLowercase", true);
+
+or
+
+    myApp.value("phraseAutoLowercase", false);
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
