@@ -1,6 +1,6 @@
 phrase = angular.module "phrase"
 
-phrase.directive "phraseJavascript", ["phraseEnabled", "phraseProjectId", "$window", (phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) ->
+phrase.directive "phraseJavascript", ["phraseEnabled", "phraseProjectId", "phraseAutoLowercase", "$window", (phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) ->
   restrict: "EA"
   replace: true
   link: () ->
