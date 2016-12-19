@@ -18,7 +18,7 @@
           if (phraseEnabled) {
             $translate._instant = $translate.instant;
             $translate.instant = function(translationId, interpolateParams, interpolationId) {
-              return phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
+              return "" + phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
             };
           }
           return $translate;
@@ -47,9 +47,9 @@
                   }
                 }
                 if (translationId) {
-                  decoratedTranslationId = phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
+                  decoratedTranslationId = "" + phraseDecoratorPrefix + "phrase_" + translationId + phraseDecoratorSuffix;
                   if (attr.translateValues) {
-                    decoratedTranslationId = decoratedTranslationId + " (" + attr.translateValues + ")";
+                    decoratedTranslationId = "" + decoratedTranslationId + " (" + attr.translateValues + ")";
                   }
                   elem.html(decoratedTranslationId);
                   return elem.removeAttr("translate");
@@ -72,7 +72,7 @@
   phrase = angular.module("phrase");
 
   phrase.directive("phraseJavascript", [
-    "phraseEnabled", "phraseProjectId", "$window", function(phraseEnabled, phraseProjectId, $window) {
+    "phraseEnabled", "phraseProjectId", "$window", function(phraseEnabled, phraseProjectId, phraseAutoLowercase, $window) {
       return {
         restrict: "EA",
         replace: true,
@@ -81,9 +81,10 @@
           if (phraseEnabled) {
             url = ['https://', 'phraseapp.com/assets/in-context-editor/2.0/app.js?', new Date().getTime()].join('');
             $window.PHRASEAPP_CONFIG = {
-              projectId: phraseProjectId
+              projectId: phraseProjectId,
+              autoLowercase: phraseAutoLowercase
             };
-            return $window.jQuery.getScript(url);
+            return window.jQuery.getScript(url);
           }
         }
       };
